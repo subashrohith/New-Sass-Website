@@ -1,0 +1,107 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/variables/index" as *;
+@use "../abstracts/mixins" as *;
+
+.about-us{
+    display: flex;
+    padding: 2rem 5rem;
+    background-color: theme-colors();
+    font-family: $roboto--font;
+    align-items: center;
+
+    @include responsive(xs){
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    @include responsive(sm){
+        flex-direction: column;
+        padding: 2rem 5rem;
+    }
+
+    @include responsive(lg){
+        flex-direction: row;
+        padding: 2rem 5rem;
+    }
+
+    @include responsive(xxl){
+        flex-direction: row;
+        padding: 2rem 25rem;
+    }
+
+    & .about--us--left{
+        width: 40%;
+        float: left;
+
+        @include responsive(xs){
+           width: 100%;
+        }
+
+        @include responsive(sm){
+            width: 100%;
+         }
+
+         @include responsive(lg){
+            width: 40%;
+         }
+        
+        & img{
+            width: 100%;
+        }
+    }
+    & .about--us--right{
+        width: 60%;
+        float: left;
+        padding-left: 20px;
+
+        @include responsive(xs){
+            width: 100%;
+            padding-left: 0px;
+         }
+
+         @include responsive(sm){
+            width: 100%;
+            padding-left: 0px;
+         }
+
+         @include responsive(lg){
+            width: 60%;
+            padding-left: 20px;
+         }
+
+        & .about__us__title{
+            font-size: 30px;
+            color: #fff;
+            font-weight: 800;
+            margin-bottom: 0px;
+
+            @include responsive(xs){
+                font-size: 22px;
+             }
+
+             @include responsive(sm){
+                font-size: 24px;
+             }
+
+             @include responsive(lg){
+                font-size: 30px;
+             }
+        }
+        & .about__us__text{
+            font-size: 14px;
+            line-height: 25px;
+            color: #ffffffab;
+            text-align: justify;
+
+            & a{
+                color: #fff;
+                font-weight: 800;
+            }
+            & a:hover{
+            background: #efefef59;
+            padding: 2px 5px;
+            }
+
+        }
+    }
+}

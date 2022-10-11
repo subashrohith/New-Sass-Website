@@ -1,0 +1,26 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+
+.btn{
+   @include btn(#000);
+
+   &-primary{
+    background: theme-colors();
+   }
+   &-primary-dark{
+    background: theme-colors("primary-dark");
+   }
+   &-dark{
+    background: theme-colors("dark");
+   }
+   &-primary-outline{
+      padding: 8px 25px;
+      border: 2px solid theme-colors("primary-dark");
+      color: theme-colors("primary-dark");
+   }
+   &-primary-outline:hover , &-primary-outline:focus{
+      background: theme-colors("primary-dark");
+      color: #fff;
+   }
+}

@@ -1,0 +1,11 @@
+@use "../abstracts/variables/index" as *;
+
+.main-title{
+    font-size: 30px;
+    color: map-get($theme-colors , "dark");
+    text-align: center;
+}
+.d-flex{
+    display: flex;
+}
+

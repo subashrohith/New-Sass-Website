@@ -1,0 +1,188 @@
+@use "../abstracts/variables/index" as *;
+@use "../abstracts/functions" as *;
+@use "../utilities/anime" as *;
+@use "../abstracts/mixins" as *;
+
+.roadmap{
+  padding: 1rem 5rem;
+  text-align: center;
+
+  @include responsive(xs){
+    padding: 1rem;
+ }
+
+ @include responsive(sm){
+  padding: 1rem 5rem;
+}
+
+@include responsive(lg){
+  padding: 1rem 5rem;
+}
+
+@include responsive(xxl){
+  padding: 1rem 25rem;
+}
+   
+  & .roadmap__title{
+    font-size: 26px;
+    font-weight: 800;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+    @include responsive(xs){
+      font-size: 20px;
+   }
+   @include responsive(sm){
+    font-size: 24px;
+ }
+
+ @include responsive(sm){
+  font-size: 26px;
+}
+  }
+
+  & .roadmap__text{
+    font-size: 14px;
+    font-weight: 500;
+    color: #7a7a7a;
+    position: relative;
+    padding-bottom: 20px;
+  }
+  & .roadmap__text::before{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    border-radius: 30px;
+    background: linear-gradient(to right, #2A2B76 44%, #721A6B 54%, #DB0F6C 70%);
+  }
+  & .roadmap--items{
+    display: flex;
+    align-items: center;
+    padding: 2rem 4rem;
+
+    @include responsive(xs){
+      padding: 2rem 1rem;
+      flex-direction: column;
+   }
+
+   @include responsive(sm){
+    padding: 2rem 5rem;
+    flex-direction: column;
+ }
+
+ @include responsive(lg){
+  padding: 2rem 4rem;
+  flex-direction: row;
+}
+
+    & .item{
+        width: 33.33%;
+        float: left;
+        position: relative;
+        filter: grayscale(100%);
+
+        @include responsive(xs){
+          width: 100%;
+       }
+
+       @include responsive(sm){
+        width: 100%;
+     }
+
+     @include responsive(lg){
+      width: 33.33%;
+   }
+    
+        & .card{
+            padding: 10px 20px;
+            
+            & .card__img__box{
+                width: 100px;
+                height: 100px;
+                margin:0 auto 20px;
+                text-align: center;
+                position: relative;
+         
+                & img{
+                    width: 50px;
+                    margin-top: 27px;
+                } 
+            }       
+            &  .card__img__box::after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: 3px dashed theme-colors("primary-dark");
+                    margin: auto;
+                    left: -3px;
+                    border-radius: 50%;
+
+                    
+            }
+
+            & .card__title{
+                font-size: 18px;
+                font-weight: 800;
+                margin-bottom: 5px;
+                color: theme-colors("primary-dark");
+            }
+            & .card__text{
+                font-size: 14px;
+                line-height: 25px;
+                color: #7a7a7a;
+            }
+        }
+    }
+
+    & .item:not(:last-child)::before{
+        content:"\f105";
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        font-size: 40px;
+        transform: translateY(-50%);
+        color: theme-colors("primary-dark");
+       transition: 0.5s;
+
+       @include responsive(xs){
+        display: none;
+     }
+       
+     @include responsive(sm){
+      display: none;
+   }
+
+   @include responsive(lg){
+    display: block;
+ }
+
+    }
+    & .item:hover{
+        filter: grayscale(0%);
+    }
+    & .item:hover::before{
+      right: -4px;
+    }
+    & .item:hover .card__img__box::after{
+        animation: shape-move 10s infinite;
+    }
+    & .item:last-child::before{
+        content: "👍 😊";
+        position: absolute;
+        top: 50%;
+        right: -20px;
+        font-size: 30px;
+        transform: translateY(-50%);
+        color: theme-colors("primary-dark");
+        z-index: 1;
+        padding-right: 5px;
+    }
+  }
+}

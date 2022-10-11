@@ -1,0 +1,10 @@
+@use "../utilities/anime";
+
+@import url('https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@200;300;400;500;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+
+.color-change{
+    transition: 500ms;
+   animation: color-change 10s infinite;
+}

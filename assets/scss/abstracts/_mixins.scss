@@ -1,0 +1,74 @@
+@use "../abstracts/variables/index" as *;
+
+@mixin btn($color:#fff) {
+    padding: 10px 25px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    outline: none;
+    font-family: $roboto--font;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+@mixin shape {
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    border: 3px solid blue !important;
+    border-radius: 5px;
+    z-index: 0;
+    animation: shape-move 10s infinite;
+}
+
+@mixin dot {
+    width: 8px;
+    height: 8px;
+    background: #06148f;
+    border-radius: 50%;
+    z-index: 0;
+    animation: shape-move 8s infinite;
+}
+@mixin heart{
+    font-size: 20px;
+    color: #f42840;
+    z-index: 0;
+    animation: shape-move 7s infinite;
+}
+
+
+@mixin responsive($break-point) {
+    @if $break-point == xs {
+        @media only screen and (max-width : 576px) {
+            @content;
+        }
+    }
+    @else if  $break-point == sm{
+        @media only screen and (min-width : 576px) {
+            @content;
+        }
+    }
+    @else if  $break-point == md{
+        @media only screen and (min-width : 768px) {
+            @content;
+        }
+    }
+    @else if  $break-point == lg{
+        @media only screen and (min-width : 992px) {
+            @content;
+        }
+    }
+    @else if  $break-point == xl{
+        @media only screen and (min-width : 1200px) {
+            @content;
+        }
+    }
+    @else if  $break-point == xxl{
+        @media only screen and (min-width : 1400px) {
+            @content;
+        }
+    }
+} 

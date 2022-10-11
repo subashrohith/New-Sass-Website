@@ -1,0 +1,147 @@
+
+@use "../abstracts/functions" as *;
+@use "../abstracts/variables/index" as *;
+@use "../abstracts/mixins" as *;
+
+
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5rem;
+    border-bottom: 1px solid #efefef4f;
+
+    @include responsive(xs){
+        padding: 1rem;
+    }
+
+    @include responsive(sm){
+        padding: 1rem 5rem;
+    }
+
+    @include responsive(md){
+        padding: 1rem 3rem;
+    }
+
+    @include responsive(lg){
+        display: flex;
+        padding: 1rem 5rem;
+        align-items: center;
+    }
+
+    @include responsive(xxl){
+        display: flex;
+        padding: 1rem 25rem;
+        align-items: center;
+    }
+
+    & .header__brand{
+        font-size: 24px;
+        font-weight: 900;
+        color: #000;
+        font-family: $roboto--font;
+
+        @include responsive(xs){
+            font-size: 22px;
+        }
+
+        @include responsive(sm){
+            font-size: 24px;
+        }
+
+        @include responsive(lg){
+            font-size: 24px;
+        }
+
+        & span{
+            margin-left: 10px;
+            font-family: $mukta--font;
+            color: theme-colors();
+            font-family: $mukta--font;
+            font-size: 22px;
+
+            @include responsive(xs){
+                font-size: 22px;
+            }
+            @include responsive(sm){
+                font-size: 24px;
+            }
+
+            @include responsive(lg){
+                font-size: 22px;
+            }
+        }
+      }
+
+      & .mobile__menu{
+        display: none;
+
+        & i{
+            font-size: 22px;
+        }
+         
+        @include responsive(xs){
+            display: block;
+        }
+
+        @include responsive(sm){
+            display: block;
+        }
+
+        @include responsive(lg){
+            display: none;
+        }
+
+      }
+
+      & .header__menu{
+        list-style-type: none;
+        margin-left: 0px;
+        display: flex;
+        align-items: baseline;
+        justify-content: end;
+
+        @include responsive(xs){
+            display: none;
+        }
+
+        @include responsive(sm){
+            display: none;
+        }
+
+        @include responsive(lg){
+            display: flex;
+        }
+
+        & .header__item{
+            margin-left: 4rem;
+
+            @include responsive(sm){
+                margin-left: 2rem;
+            }
+
+            & .header__link{
+                text-decoration: none;
+                color: theme-colors("dark");
+                font-family: $roboto--font;
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            & .header__link.active ,  .header__link:hover{
+                color:theme-colors("primary-dark");
+            }
+            & .header__btn{
+                background:theme-colors(); 
+                padding: 8px 25px;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+            }
+            & .header__btn:hover{
+                color: #fff;
+            }
+        }
+    }   
+}

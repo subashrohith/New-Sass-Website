@@ -1,0 +1,52 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/variables/index" as *;
+@use "../abstracts/mixins" as *;
+
+.footer{
+    background: theme-colors();
+    padding: 1rem 5rem;
+    font-family: $roboto--font;
+
+    & .footer--detail{
+        text-align: center;
+
+        & .footer__title{
+            font-size: 22px;
+            color: #fff;
+            font-weight: 800;
+            margin-bottom: 0px;
+
+            @include responsive(xs){
+               font-size: 16px;
+             }
+            
+            & span{
+                font-family: $mukta--font;
+                margin-left: 5px;
+            }
+        }
+        & .footer__text{
+            font-size: 14px;
+            color: #ffffffab;
+        }
+        & .footer__small__text{
+            font-size: 12px;
+            color: #ffffffab;
+        }
+    }
+    & .social--icons{
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+
+        & li{
+            padding-right:  25px;
+        }
+
+        & .social__links{
+            font-size: 18px;
+            color: theme-colors("primary-dark");
+            text-decoration: none;
+        }
+    }
+}

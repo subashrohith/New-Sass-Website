@@ -1,0 +1,141 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/variables/index" as *;
+@use "../abstracts/mixins" as *;
+
+.contact-us{
+    padding: 2rem;
+    background: #f4f4f4;
+    font-family: $roboto--font;
+
+    @include responsive(xs){
+        padding: 1rem;
+     }
+
+     @include responsive(xs){
+        padding: 2rem;
+     }
+
+     @include responsive(lg){
+        padding: 2rem;
+     }
+
+     @include responsive(xxl){
+        padding: 2rem 25rem;
+     }
+
+    & .contact--detail{
+        background: #fff;
+        padding: 20px;
+        border-radius: 7px;
+        box-shadow: 0px 1px 2px 0px #efefef;
+        display: flex;
+
+        @include responsive(xs){
+            flex-direction: column;
+         }
+
+         @include responsive(sm){
+            flex-direction: column;
+         }
+
+         @include responsive(lg){
+            flex-direction: row;
+         }
+
+
+        & .contact__title{
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            margin-top: 0px;
+        }
+        
+        & .contact__text{
+            font-size: 14px;
+            color: #7a7a7a;
+        }
+        & .contact--detail--left{
+            width: 60%;
+            float: left;
+            padding-right: 40px;
+
+            @include responsive(xs){
+                width: 100%;
+                padding-right: 0px;
+             }
+
+             @include responsive(sm){
+                width: 90%;
+                padding-right: 0px;
+             }
+
+             @include responsive(lg){
+                width: 60%;
+                padding-right: 40px;
+             }
+            
+             & .contact--form{
+                
+                @include responsive(sm){
+                    width: auto;
+                  }
+
+                @include responsive(sm){
+                   width: auto;
+                 }
+
+                 @include responsive(sm){
+                    width: 100%;
+                  }
+             }
+
+            & .contact--form .form-control{
+               border: none;
+               background: #f3f3f3;
+               width: 100%;
+               display: block;
+               height: 45px;
+               font-size: 14px;
+               color: #7a7a7a;
+               padding: 0px 20px;
+               border-radius: 5px;
+            }
+            & .contact--form  .form-textarea{
+                border: none;
+               background: #f3f3f3;
+               width: 100%;
+               display: block;
+               font-size: 14px;
+               color: #7a7a7a;
+               padding: 10px 20px;
+               border-radius: 5px;
+            }
+
+            & .contact--form .form-control::placeholder , .contact--form  .form-textarea::placeholder{
+                 font-size: 14px;
+                 color: #7a7a7a;
+                 font-family: $roboto--font;
+            }
+        }
+        & .contact--detail--right{
+            width: 40%;
+            float: left;
+
+            @include responsive(xs){
+                width: 100%;
+             }
+
+             @include responsive(sm){
+                width: 100%;
+             }
+
+             @include responsive(lg){
+                width: 40%;
+             }
+
+            & img{
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+@use "../abstracts/mixins" as *;
+
+.background--shapes {
+
+    @include responsive(xs){
+        display: none;
+    }
+
+    @include responsive(sm){
+        display: none;
+    }
+
+    @include responsive(md){
+        display: block;
+    }
+
+    @include responsive(lg){
+        display: block;
+    }
+    
+    .shape-1{
+        position: absolute;
+        top: 15%;
+        left: 10%;
+        @include shape;
+
+        @include responsive(md){
+            left: 4%;
+        }
+
+        @include responsive(lg){
+            left: 10%;
+        }
+    }
+
+    .shape-2{
+        position: absolute;
+        bottom: 25%;
+        left: 40%;
+       @include shape;
+
+       @include responsive(md){
+        left: 90%;
+    }
+
+    @include responsive(lg){
+        left: 40%;
+    }
+    }
+
+    .shape-3{
+        position: absolute;
+        top: 10%;
+        right: 10%;
+        @include shape;
+
+        @include responsive(md){
+            top:28%;
+            right: 28%;
+        }
+
+        @include responsive(lg){
+            top:10%;
+            right: 10%;
+        }
+    }
+
+    .dot-1{
+        position: absolute;
+        top: 7%;
+        left: 28%;
+        @include dot;
+
+        @include responsive(md){
+            top: 0%;
+        }
+
+        @include responsive(lg){
+            top: 7%;
+        }
+    }
+    .dot-2{
+        position: absolute;
+        bottom: 9%;
+        right: 28%;
+        @include dot;
+    }
+    .heart-1{
+        position: absolute;
+        top: 7%;
+        left: 55%;
+        @include heart;
+    }
+    .heart-2{
+        position: absolute;
+        bottom: 9%;
+        left: 8%;
+        @include heart;
+    }
+}

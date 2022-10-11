@@ -1,0 +1,33 @@
+
+/* base*/
+
+@use "./base/global";
+@use "./base/reset";
+
+/* abstracts*/
+
+@use "./abstracts/variables/index";
+@use "./component/buttons";
+
+/*components*/
+
+@use "./component/common";
+@use "./component/shapes";
+
+/*layouts*/
+
+@use "./layouts/navbar";
+@use "./layouts/banner";
+@use "./layouts/about-us";
+@use "./layouts/roadmap";
+@use "./layouts/course";
+@use "./layouts/contact";
+@use "./layouts/footer";
+
+/* pages*/
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+@use "./variables/index" as *;
+
+@function theme-colors($color:"primary"){
+    @return map-get($theme-colors , $color)
+};
+
+$spacing : 1,2,3,4,5;
+$directions:top,left,right,bottom;
+
+@each $gap in $spacing {
+    .m-#{$gap}{
+        margin:#{$gap}rem;
+    }
+
+    @each $direc in $directions{
+      .m#{str-slice($direc , 0, 1)}-#{$gap}{
+        margin-#{$direc}: #{$gap}rem;
+      }
+    }
+}
+
+
+@each $gap in $spacing {
+  .p-#{$gap}{
+      padding:#{$gap}rem;
+  }
+
+  @each $direc in $directions{
+    .p#{str-slice($direc , 0, 1)}-#{$gap}{
+      padding-#{$direc}: #{$gap}rem;
+    }
+  }
+}
