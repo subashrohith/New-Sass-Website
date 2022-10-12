@@ -16,7 +16,7 @@
   <body>
     <!-- ========== Start Header ========== -->
 
-    <header class="header">
+    <header class="header ">
       <div class="header--left">
         <a href="#" class="header__brand">
           Web Design<span class="color-change">(தமிழ்)</span>
@@ -25,24 +25,25 @@
       <div class="header--right">
         
         <div class="mobile__menu">
-          <i class="fa-solid fa-bars-staggered"></i>
+          <i class="navIcon fa-solid fa-bars-staggered"></i>
+          <i class="navIcon fa-solid fa-xmark hidden"></i>
         </div>
 
         <ul class="header__menu">
           <li class="header__item">
-            <a class="header__link active" href="#" aria-current="page">Home</a>
+            <a class="header__link active" href="#home_detail" aria-current="page">Home</a>
           </li>
           <li class="header__item">
-            <a class="header__link" href="#">About Us</a>
+            <a class="header__link" href="#about_detail">About Us</a>
           </li>
           <li class="header__item">
-            <a class="header__link" href="#">Road Map</a>
+            <a class="header__link" href="#roadmap_detail">Road Map</a>
           </li>
           <li class="header__item">
-            <a class="header__link" href="#">Courses</a>
+            <a class="header__link" href="#course_detail">Courses</a>
           </li>
           <li class="header__item">
-            <a class="btn btn-primary" href="#">Contact Us</a>
+            <a class="btn btn-primary" href="#contact_detail">Contact Us</a>
           </li>
         </ul>
       </div>
@@ -52,7 +53,7 @@
 
     <!-- ========== Main Section Start ========== -->
 
-    <div class="banner">
+    <div class="banner" id="home_detail">
       <div class="background--shapes">
         <div class="shape-1"></div>
         <div class="shape-2"></div>
@@ -83,7 +84,7 @@
       </div>
     </div>
 
-    <div class="about-us">
+    <div class="about-us" id="about_detail">
       <div class="about--us--left">
         <img src="./assets/images/about.png" alt="" />
       </div>
@@ -101,7 +102,7 @@
       </div>
     </div>
 
-    <div class="roadmap">
+    <div class="roadmap" id="roadmap_detail">
       <h5 class="roadmap__title">Roadmap to Expertise</h5>
       <p class="roadmap__text">Smart & Slow. Finish it with Style.</p>
       <div class="roadmap--items">
@@ -144,7 +145,7 @@
       </div>
     </div>
 
-    <div class="course">
+    <div class="course" id="course_detail">
       <h5 class="course__title">Free Course to Enroll</h5>
       <p class="course__text">
         Start from begining , no pre-registration requires
@@ -193,7 +194,7 @@
       </p>
     </div>
 
-    <div class="contact-us">
+    <div class="contact-us" id="contact_detail">
         <div class="contact--detail">
             <div class="contact--detail--left">
                 <h5 class="contact__title">Send us a Message</h5>
@@ -250,5 +251,8 @@
     </footer>
 
     <!-- ========== End Footer ========== -->
+
+    <script src="./assets/js/main.js"></script>
+
   </body>
 </html>

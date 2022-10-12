@@ -219,9 +219,30 @@
     transform: rotate(360deg);
   }
 }
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@keyframes slide-out {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: -100%;
+  }
+}
 .color-change {
   transition: 500ms;
   animation: color-change 10s infinite;
+}
+
+* {
+  scroll-behavior: smooth;
+  scroll-margin-top: 80px;
 }
 
 body {
@@ -287,7 +308,7 @@ a {
     display: none;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .background--shapes {
     display: block;
   }
@@ -309,7 +330,7 @@ a {
   z-index: 0;
   animation: shape-move 10s infinite;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .background--shapes .shape-1 {
     left: 4%;
   }
@@ -331,7 +352,7 @@ a {
   z-index: 0;
   animation: shape-move 10s infinite;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .background--shapes .shape-2 {
     left: 90%;
   }
@@ -353,7 +374,7 @@ a {
   z-index: 0;
   animation: shape-move 10s infinite;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .background--shapes .shape-3 {
     top: 28%;
     right: 28%;
@@ -376,7 +397,7 @@ a {
   z-index: 0;
   animation: shape-move 8s infinite;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .background--shapes .dot-1 {
     top: 0%;
   }
@@ -420,8 +441,12 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 5rem;
+  padding: 0.7rem 5rem;
   border-bottom: 1px solid rgba(239, 239, 239, 0.3098039216);
+  position: sticky;
+  top: 0px;
+  background: #fff;
+  z-index: 1020;
 }
 @media only screen and (max-width: 576px) {
   .header {
@@ -433,22 +458,17 @@ a {
     padding: 1rem 5rem;
   }
 }
-@media only screen and (min-width: 768px) {
-  .header {
-    padding: 1rem 3rem;
-  }
-}
 @media only screen and (min-width: 992px) {
   .header {
     display: flex;
-    padding: 1rem 5rem;
+    padding: 0.5rem 5rem;
     align-items: center;
   }
 }
 @media only screen and (min-width: 1400px) {
   .header {
     display: flex;
-    padding: 1rem 25rem;
+    padding: 1rem 15rem;
     align-items: center;
   }
 }
@@ -526,11 +546,41 @@ a {
 @media only screen and (max-width: 576px) {
   .header .header__menu {
     display: none;
+    position: fixed;
+    top: 50px;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    background: #303030;
+    z-index: 1;
+    flex-direction: column;
+    margin-left: 0px;
+    padding-left: 20px;
+  }
+  .header .header__menu.show {
+    display: block;
+    transition: 500ms;
+    animation: slide 0.5s ease-in-out;
   }
 }
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 576px) and (max-width: 768px) {
   .header .header__menu {
     display: none;
+    position: fixed;
+    top: 50px;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    background: #303030;
+    z-index: 1;
+    flex-direction: column;
+    margin-left: 0px;
+    padding-left: 20px;
+  }
+  .header .header__menu.show {
+    display: block;
+    transition: 500ms;
+    animation: slide 0.5s ease-in-out;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -540,10 +590,23 @@ a {
 }
 .header .header__menu .header__item {
   margin-left: 4rem;
+  margin-top: 0rem;
 }
-@media only screen and (min-width: 576px) {
+@media only screen and (max-width: 576px) {
   .header .header__menu .header__item {
-    margin-left: 2rem;
+    margin-top: 2.5rem;
+    margin-left: 0rem;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  .header .header__menu .header__item {
+    margin-top: 2.5rem;
+    margin-left: 0rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .header .header__menu .header__item {
+    margin-left: 3rem;
   }
 }
 .header .header__menu .header__item .header__link {
@@ -554,8 +617,28 @@ a {
   font-weight: 600;
   text-transform: uppercase;
 }
+@media only screen and (max-width: 576px) {
+  .header .header__menu .header__item .header__link {
+    color: #fff;
+  }
+}
 .header .header__menu .header__item .header__link.active, .header .header__menu .header__item .header__link:hover {
   color: #06148f;
+}
+@media only screen and (max-width: 576px) {
+  .header .header__menu .header__item .header__link.active, .header .header__menu .header__item .header__link:hover {
+    color: #fff;
+  }
+}
+@media only screen and (min-width: 576px) {
+  .header .header__menu .header__item .header__link.active, .header .header__menu .header__item .header__link:hover {
+    color: #fff;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header .header__menu .header__item .header__link.active, .header .header__menu .header__item .header__link:hover {
+    color: #fff;
+  }
 }
 .header .header__menu .header__item .header__btn {
   background: #4B59DD;
@@ -566,6 +649,10 @@ a {
 }
 .header .header__menu .header__item .header__btn:hover {
   color: #fff;
+}
+
+.hidden {
+  display: none;
 }
 
 .banner {
@@ -595,7 +682,7 @@ a {
 }
 @media only screen and (min-width: 1400px) {
   .banner {
-    padding: 2rem 25rem;
+    padding: 2rem 15rem;
     flex-direction: row;
   }
 }
@@ -745,7 +832,7 @@ a {
 @media only screen and (min-width: 1400px) {
   .about-us {
     flex-direction: row;
-    padding: 2rem 25rem;
+    padding: 2rem 15rem;
   }
 }
 .about-us .about--us--left {
@@ -850,7 +937,7 @@ a {
 }
 @media only screen and (min-width: 1400px) {
   .roadmap {
-    padding: 1rem 25rem;
+    padding: 1rem 15rem;
   }
 }
 .roadmap .roadmap__title {
@@ -1042,7 +1129,7 @@ a {
 }
 @media only screen and (min-width: 1400px) {
   .course {
-    padding: 1rem 25rem;
+    padding: 1rem 15rem;
   }
 }
 .course .course__title {
@@ -1167,7 +1254,7 @@ a {
 }
 @media only screen and (min-width: 1400px) {
   .contact-us {
-    padding: 2rem 25rem;
+    padding: 2rem 15rem;
   }
 }
 .contact-us .contact--detail {

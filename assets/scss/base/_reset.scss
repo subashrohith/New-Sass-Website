@@ -1,4 +1,10 @@
 @use "../abstracts/variables/index" as *;
+
+*{
+    scroll-behavior: smooth;
+    scroll-margin-top: 80px;
+}
+
 body{
     padding: 0;
     margin: 0;
